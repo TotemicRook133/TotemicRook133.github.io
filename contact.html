@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport"    content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="">
+	<meta name="author"      content="Sergey Pozhilov (GetTemplate.com)">
+	
+	<title>Contact | Adit Prasad Lohani</title>
+
+	<link rel="shortcut icon" href="images/gt_favicon.png">
+	
+	<!-- Bootstrap -->
+	<link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.no-icons.min.css" rel="stylesheet">
+	<!-- Icon font -->
+	<link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+	<!-- Fonts -->
+	<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Alice|Open+Sans:400,300,700">
+	<!-- Custom styles -->
+	<link rel="stylesheet" href="css/styles.css">
+
+	<!--[if lt IE 9]> <script src="js/html5shiv.js"></script> <![endif]-->
+</head>
+<body>
+	<button id="back-to-top-btn"><img src="images/up.png"></button>
+<div class="cursor"></div>
+<header id="header">
+	<div id="head" class="parallax" parallax-speed="1">
+		<h1 id="logo" class="text-center">
+			<img class="img-circle" src="images/guy.png" alt="">
+			<span class="title">Adit Lohani</span>
+			<span class="tagline">Handsome</span>
+		</h1>
+	</div>
+
+	<nav class="navbar navbar-default navbar-sticky">
+		<div class="container-fluid">
+			
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+			</div>
+			
+			<div class="navbar-collapse collapse">
+				
+				<ul class="nav navbar-nav">
+					<li><a href="index.html">Home</a></li>
+					<li><a href="about.html">About</a></li>
+					<!-- <li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown">More Pages <b class="caret"></b></a>
+						<ul class="dropdown-menu">
+							<li><a href="sidebar-left.html">Left Sidebar</a></li>
+							<li><a href="sidebar-right.html">Right Sidebar</a></li>
+							<li><a href="single.html">Blog Post</a></li>
+						</ul>
+					</li> -->
+					<li class="active"><a href="blog.html">Blog</a></li>
+				</ul>
+			
+			</div><!--/.nav-collapse -->			
+		</div>	
+	</nav>
+</header>
+
+<main id="main">
+
+	<div class="container">
+		<div class="row topspace">
+			<div class="col-sm-8 col-sm-offset-2">
+				<div class="card1">
+				<div class="inner-card1">
+				  <div class="contan">
+					<hr>
+					<i class="fas fa-utensils"></i>
+					<span class="tauko" data-val="400">Email</span>
+					<span class="text"><a href="mailto:lohaniadit4133@gmail.com">lohaniadit4133gmail.com</a></span>
+					<hr>
+				  </div>
+				  <div class="contan">
+					<i class="fas fa-utensils"></i>
+					<span class="tauko" data-val="200">Other Email</span>
+					<span class="text"><a href="mailto:contact@adit.com.np">contact@adit.com.np</a></span>
+					<hr>
+				  </div>
+				  <div class="contan">
+					<i class="fas fa-map-marker-alt"></i>
+					<span class="tauko" data-val="10"> Mailing Address:</span>
+					<span class="text"> 147, Bashanteshwar Galli, Dillibazar-30, Kathmandu Metropolitan city, Kathmandu, Bagmati Province Nepal, 44605</span>
+					<hr>
+				  </div>
+				  
+				</div>
+			</div>
+  
+			<form id="myForm" action="form.php" method="post">
+				<label for="firstName">First Name:</label><br>
+				<input type="text" id="firstName" name="firstName" placeholder="your name"><br>
+				
+				<label for="lastName">Last Name:</label><br>
+				<input type="text" id="lastName" name="lastName"><br>
+				
+				<label for="email">Email:</label><br>
+				<input type="email" id="email" name="email"><br>
+				
+				<label for="phone">Phone:</label><br>
+				<input type="tel" id="phone" name="phone"><br>
+				
+				<label for="message">Message:</label><br>
+				<textarea id="message" name="message"></textarea><br>
+				
+				<label for="comments">Additional Comments:</label><br>
+				<textarea id="comments" name="comments"></textarea><br>
+				
+				<label for="referrer">How did you hear about me?</label><br>
+				<select id="referrer" name="referrer">
+				  <option value="friend">A friend</option>
+				  <option value="search">Search engine</option>
+				  <option value="advertisement">Advertisement</option>
+				  <option value="other">Other</option>
+				</select><br>
+				
+				<button type="submit">Submit</button>
+			  </form>
+			  
+			  <div id="results"></div>
+			  
+			  <script>
+				const form = document.getElementById("myForm");
+				form.addEventListener("submit", function(event) {
+				  event.preventDefault(); // prevent the default form submission
+				  
+				  const formData = new FormData(form); // get the form data
+				  
+				  // Display the form data in the "results" div
+				  const resultsDiv = document.getElementById("results");
+				  resultsDiv.innerHTML = "";
+				  for (let [name, value] of formData) {
+					const p = document.createElement("p");
+					print("thank you");
+					p.textContent = `${name}: ${value}`;
+					resultsDiv.appendChild(p);
+				  }
+				});
+			  </script>
+							
+			</div>
+			</div>
+			</div>
+			</main>
+	<footer id="footer">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-4 widget">
+						<h3 class="widget-title">Hello</h3>
+						<div class="widget-body">
+							<p>Hello everyone! It is a great pleasure to have you visit this site. Thank you so much. If you want to know more about me or anything, please do connect with me.</p>
+						</div>
+					</div>
+
+					<div class="col-md-4 widget">
+						<h3 class="widget-title" align="center">Follow me</h3>
+						<div class="widget-body" align="center">
+							<p class="follow-me-icons">
+								<a href="https://www.linkedin.com/in/adit-lohani"><i class="fa fa-linkedin fa-2"></i></a>
+								<a href="https://www.facebook.com/adit.lohani"><i class="fa fa-facebook fa-2"></i></a>
+								<a href="https://www.instagram.com/1add3it3/"><i class="fa fa-instagram fa-2"></i></a>
+								<a href="https://twitter.com/AditLohani"><i class="fa fa-twitter fa-2"></i></a>
+							</p>
+						</div>
+					</div>
+
+					
+
+					<div class="col-md-4 widget">
+						<h3 class="widget-title">Contact</h3>
+						<div class="widget-body">
+							<p><a href="tel:+9779823149600">+977 9823149600</a><br>
+								<a href="mailto:lohaniadit4133@gmail.com">lohaniadit4133@gmail.com</a>
+								<br><a href="mailto:contact@adit.com.np">contact@adit.com.np</a><br>
+								<br>
+								147, Bashanteshwar Galli, Dillibazar-30, Kathmandu Metropolitan city, Kathmandu, Bagmati Province Nepal, 44605
+							</p>	
+						</div>
+					</div>
+
+				</div> 
+			</div>
+		</footer>
+
+		<footer id="underfooter">
+			<div class="container">
+				<div class="row">
+					
+					<div class="col-md-6 widget">
+						<div class="widget-body">
+							<p>147, Bashanteshwar Galli, Dillibazar-30, Kathmandu Metropolitan city, Kathmandu, Bagmati Province Nepal, 44605 </p>
+						</div>
+					</div>
+
+					<div class="col-md-6 widget">
+						<div class="widget-body">
+							<p class="text-right">
+								Made with <span class="fa fa-heart heart-beat"></span> by Adit
+							</p>
+						</div>
+					</div>
+
+				</div> 
+			</div>
+		</footer>
+		<script>
+			const form = document.getElementById('contact-form');
+const fname = document.getElementById('fname');
+const lname = document.getElementById('lname');
+const email = document.getElementById('email');
+const phone = document.getElementById('phone');
+const message = document.getElementById('message');
+
+form.addEventListener('submit', function(e) {
+  e.preventDefault();
+
+  if (!isValid()) {
+    return;
+  }
+
+  // Send form data to server
+});
+
+function isValid() {
+  let isValid = true;
+
+  if (fname.value.trim() === '') {
+    isValid = false;
+    showError(fname, 'First name is required');
+  }
+
+  if (lname.value.trim() === '') {
+    isValid = false;
+    showError(lname, 'Last name is required');
+  }
+
+ 
+
+		</script>
+		<style>
+			html::-webkit-scrollbar{
+				width:0.8vw;
+				
+			}
+			html::-webkit-scrollbar-thumb{
+				background-color: #7775;
+				border-radius: 100vw;
+				border:.1em solid #5555;
+			}
+			html::-webkit-scrollbar-track{
+				background-color: #5555;
+				border-radius: 100vw;
+				margin-block: .15em;
+			}
+			html::-webkit-scrollbar-thumb:hover{
+				background-color: #777;
+				border-radius: 100vw;
+				border:.1em solid #AAA;
+			}
+			html::-webkit-scrollbar-track:hover{
+				background-color: #AAA;
+				border-radius: 100vw;
+				margin-block: .15em;
+			}
+		</style>
+		<script>
+			var cursor = document.querySelector(".cursor");
+			var cursor2 = document.querySelector(".cursor2");
+			document.addEventListener("mousemove",function(e){
+				cursor.style.cssText = cursor2.style.cssText = "left: " + e.clientX +"px; top: " + e.clientY +"px;";
+			});
+			document.addEventListener('click',() => {
+				cursor.classList.add("expand");
+				setTimeout(()=>{
+					cursor.classList.remove("expand");
+				},500)
+			})
+			document.addEventListener('click',() => {
+				cursor2.classList.add("expand");
+				setTimeout(()=>{
+					cursor2.classList.remove("expand");
+				},500)
+			})
+		</script>
+		<script type="text/JavaScript">
+			window.addEventListener('scroll', function(){
+				var scroll = document.querySelector('.scrollTop');
+				scroll.classList.toggle("active", window.scrollY > 500)
+			})
+		</script>
+		<!-- JavaScript libs are placed at the end of the document so the pages load faster -->
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+		<script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+		<script src="js/template.js"></script>
+		<script src='js/smoothscroll.js'></script>
+		<!--[if lt IE 9]> <script src="js/html5shiv.js"></script> <![endif]-->
