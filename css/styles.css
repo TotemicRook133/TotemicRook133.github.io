@@ -1427,22 +1427,130 @@ footer.entry-meta .meta-in {
     max-width: 1080px;
   }
 }
-.ghuma{
+/* Default: for screens wider than 621px (your original) */
+.ghuma {
   position: relative;
   width: 470px;
   height: 480px;
   display: flex;
   justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  padding: 50px;
+}
+.ghuma span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 470px;
+  height: 480px;
+  border: 7.5px solid darkgray;
+  border-radius: 38% 63% 63% 37% / 41% 44% 56% 59%;
+  transition: 0.5s;
+  background-color: lightgrey;
+}
+.ghuma span:nth-child(1) {
+  animation: animate 6s linear infinite;
+}
+.ghuma:hover span:nth-child(1) {
+  border: 15px solid lightgray;
+  background-color: darkgray;
+  animation: animate 6s linear infinite alternate-reverse;
+}
+.ghuma span:nth-child(2) {
+  animation: animate 4s linear infinite;
+}
+.ghuma:hover span:nth-child(2) {
+  border: 15px solid lightgray;
+  background-color: darkgray;
+  animation: animate 4s linear infinite alternate-reverse;
+}
+.ghuma span:nth-child(3) {
+  animation: animate2 10s linear infinite;
+}
+.ghuma:hover span:nth-child(3) {
+  border: 15px solid lightgray;
+  background-color: darkgray;
+  animation: animate2 10s linear infinite alternate-reverse;
+}
+
+@keyframes animate {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+@keyframes animate2 {
+  0% { transform: rotate(360deg); }
+  100% { transform: rotate(0deg); }
+}
+
+.vitra {
+  background-color: darkgray;
+  width: 100px;
+  margin: 10px auto 0;
+  padding: 5px;
+  border: 2px solid black;
+  transition: 0.3s;
+}
+.vitra:hover {
+  background-color: rgb(131, 130, 130);
+  width: 150px;
+}
+
+.content {
+  position: relative;
+  padding: 40px 60px;
+  z-index: 1000;
+  text-align: center;
+}
+.content:hover {
+  color: #fff;
+}
+
+/* ✅ Responsive override: 621px and below */
+@media screen and (max-width: 621px) {
+  .ghuma {
+    width: 90vw;
+    height: auto;
+    aspect-ratio: 47 / 48;
+    padding: 5vw;
+  }
+
+  .ghuma span {
+    width: 100%;
+    height: 100%;
+  }
+
+  .content {
+    padding: 5vw;
+  }
+
+  .vitra {
+    width: 80px;
+  }
+
+  .vitra:hover {
+    width: 120px;
+  }
+}
+
+/* .ghuma{
+  position: relative;
+  width: 90vw;
+  max-width: 470px;
+  height: auto;
+  aspect-ratio: 47/48;
+  display: flex;
+  justify-content: center;
   align-items:center;
   margin:0 auto;
-  padding: 50px;
+  padding: 5vw;
 }
 .ghuma span:nth-child(1){
   position: absolute;
   top: 0;
   left: 0;
-  width:470px;
-  height:480px;
+  width:100%;
+  height:100%;
   border: 7.5px solid darkgray;
   border-radius: 38% 63% 63% 37% / 41% 44% 56% 59%;
   transition: 0.5s;
@@ -1509,9 +1617,10 @@ footer.entry-meta .meta-in {
 }
 .content{
   position:relative;
-  padding:40px 60px;
+  padding:5vw;
   transition: 0.5s;
   z-index:1000;
+  text-align: center;
 }
 
 .vitra{
@@ -1537,7 +1646,7 @@ footer.entry-meta .meta-in {
 }
 .content :hover{
   color:#fff;
-}
+} */
 /*cursor*/
 
 /*cursor*/
