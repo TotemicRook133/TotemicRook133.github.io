@@ -7,6 +7,7 @@ body {
   font-size: 0.9375rem;
   font-family: "Open sans", Helvetica, Arial, sans-serif;
   color: #666666;
+  
   padding: 0;
 }
 /**************************************/
@@ -545,6 +546,7 @@ body {
   float: none;
   margin: 0 auto;
   text-align: center;
+  
 }
 .navbar-collapse .navbar-nav > li {
   float: none;
@@ -608,6 +610,14 @@ body {
   background-color: #ffffff;
   color: #000000;
 }
+@media (max-width: 768px) {
+  .navbar-collapse .navbar-nav > li {
+    display: block;
+    width: 100%;
+    text-align: center; /* or center if you prefer */
+  }
+}
+
 /****************************************************************************************
 
 
@@ -633,6 +643,12 @@ body {
 .nav-side > li.active > a {
   color: #bd1550;
 }
+@media (max-width: 768px) {
+  .navbar-header {
+    display: block;
+  }
+}
+
 /*********************************************************************
 
 
@@ -726,6 +742,7 @@ a:hover {
 #head {
   background: #f4f4f4 url(../images/bg_head.jpg) top center;
   background-size: cover;
+  width: auto;
   color: #7C7C7C;
   padding: 30px 0 35px 0;
 }
@@ -1022,11 +1039,15 @@ img {
 }
 
 /* kjka */
-/* .portfolio{
+.portfolio{
+  max-width: 1080px;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
   /* background: var(--second-bg-color); */
-  /* box-shadow: 6px 6px 10px -1px rgba(73, 67, 67, 0.15), -6px -6px 10px -1px rgba(83, 80, 80, 0.7); */
-  /* box-shadow: inset 4px 4px 6px -1px rgba(198, 198, 198, 0.15), inset -4px -4px 6px -1px rgba(83, 80, 80, 0.7), -0.5px -0.5px 0px rgba(73, 67, 67, 0.15), 0.5px 0.5px 0px rgba(83, 80, 80, 0.7), 0px 12px 10px -10px rgba(83, 80, 80, 0.7); */
-/* } */
+  /* box-shadow: 6px 6px 10px -1px rgba(73, 67, 67, 0.15), -6px -6px 10px -1px rgba(83, 80, 80, 0.7);
+  box-shadow: inset 4px 4px 6px -1px rgba(198, 198, 198, 0.15), inset -4px -4px 6px -1px rgba(83, 80, 80, 0.7), -0.5px -0.5px 0px rgba(73, 67, 67, 0.15), 0.5px 0.5px 0px rgba(83, 80, 80, 0.7), 0px 12px 10px -10px rgba(83, 80, 80, 0.7); */
+}
 .portfolio-container{
   display: grid;
   grid-template-columns: repeat(3,1fr);
@@ -1789,6 +1810,7 @@ footer.entry-meta .meta-in {
   max-width: 420px;
   height: auto;
   width:auto;
+  margin: auto;
   justify-content: center;
   align-items:center;
   margin:0 auto;
@@ -3062,6 +3084,13 @@ body{
   font-size: 25px;
   transform: translateX(-50%);
 }
+.rowtau{
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: auto;
+  justify-content: center;
+  align-items: center;
+}
 .row-1 section img{
   /* padding-top: 25px; */
   top: 15px;
@@ -3209,7 +3238,7 @@ body{
   width: 1080px;
   margin: auto;
   display:flex;
-  align-items: center;
+  /* align-items: center; */
   justify-content: center;
 }
 /**/
