@@ -3139,12 +3139,19 @@ body{
   }
   .wrapper .row section{
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
   }
   .row-1 section::before{
     left: -7px;
   }
-  .row-1 section img{
-    left: -60px;
+  .row-1 section img, .row-2 section img{
+    position: static;
+    margin-bottom: 10px;
+    left: 0;
+    right: 0;
   }
 }
 @media(max-width: 440px){
