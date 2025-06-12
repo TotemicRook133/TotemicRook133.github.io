@@ -1037,6 +1037,18 @@ img {
   /* box-shadow: inset 4px 4px 6px -1px rgba(198, 198, 198, 0.15), inset -4px -4px 6px -1px rgba(83, 80, 80, 0.7), -0.5px -0.5px 0px rgba(73, 67, 67, 0.15), 0.5px 0.5px 0px rgba(83, 80, 80, 0.7), 0px 12px 10px -10px rgba(83, 80, 80, 0.7); */
   
 }
+@media (max-width: 900px) {
+  .portfolio-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* For mobile (less than 600px wide): 1 item per row */
+@media (max-width: 600px) {
+  .portfolio-container {
+    grid-template-columns: 1fr;
+  }
+}
 .portfolio-container .portfolio-box{
   position: relative;
   border-radius: 0.8rem;
@@ -3200,24 +3212,28 @@ body{
   align-items: center;
   justify-content: center;
 }
-.photokobodkokira{
-  display:flex;
-  align-items: center;
+/**/
+
+/**/
+.photokobodkokira {
+  display: flex;
   justify-content: center;
 }
+
 .imgoconto {
   display: flex;
   flex-wrap: wrap;
-  align-content: center;
   justify-content: center;
-  margin: 0; /* Adjust this value as needed for spacing */
+  gap: 16px;
+  max-width: 1200px;
+  padding: 20px;
 }
 
 .imgocontokoitem {
-  flex: 1;
-  padding: 8px; /* Adjust this value as needed for spacing */
+  flex: 0 0 23%; /* 4 per row on large screens */
+  padding: 8px;
   box-sizing: border-box;
-  max-width: 25%;
+  transition: transform 0.3s ease;
 }
 
 .imgocontokoitem img {
@@ -3225,7 +3241,22 @@ body{
   height: 200px;
   display: block;
 }
-.imgocontokoitem:hover{
+
+.imgocontokoitem:hover {
   transform: scale(1.1);
   opacity: 90%;
+}
+
+/* Responsive: 2 per row on tablets */
+@media (max-width: 991px) {
+  .imgocontokoitem {
+    flex: 0 0 45%;
+  }
+}
+
+/* Responsive: 1 per row on phones */
+@media (max-width: 576px) {
+  .imgocontokoitem {
+    flex: 0 0 100%;
+  }
 }
