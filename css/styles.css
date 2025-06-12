@@ -1542,7 +1542,7 @@ footer.entry-meta .meta-in {
 /* ✅ Responsive override: 621px and below */
 @media screen and (max-width: 621px) {
   .ghuma {
-    width: 90vw;
+    width: 80vw;
     height: auto;
     aspect-ratio: 47 / 48;
     padding: 5vw;

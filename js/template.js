@@ -10,8 +10,8 @@ function handleDeviceType() {
 	var deviceType = detectDeviceType();
 
 	if (deviceType === 'mobile') {
-	  messageElement.style.display = 'block';
-	  contentElement.style.display = 'none';
+	    messageElement.style.display = 'none';
+	  contentElement.style.display = 'block';
 	} else {
 	  messageElement.style.display = 'none';
 	  contentElement.style.display = 'block';
