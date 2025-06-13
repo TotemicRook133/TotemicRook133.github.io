@@ -1542,7 +1542,7 @@ footer.entry-meta .meta-in {
 /* ✅ Responsive override: 621px and below */
 @media screen and (max-width: 621px) {
   .ghuma {
-    width: 80vw;
+    width: 100vw;
     height: auto;
     aspect-ratio: 47 / 48;
     padding: 5vw;
@@ -1554,7 +1554,7 @@ footer.entry-meta .meta-in {
   }
 
   .content {
-    padding: 5vw;
+    padding: 4.25vw;
   }
 
   .vitra {
