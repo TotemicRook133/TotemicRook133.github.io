@@ -438,6 +438,7 @@
 						<sectoni>
 							<div class="swiper-container">
 								<div class="swiper-wrapper">
+
 									<div class="swiper-slide">
 										<div class="testimonialBox">
 											<img src="quote.png" class="quote">
@@ -529,6 +530,8 @@
 										</div>
 									</div>
 								</div>
+								<div class="swiper-button-prev mobile-nav"></div>
+  								<div class="swiper-button-next mobile-nav"></div>
 							</div>
 						</sectoni>
 					</div>
@@ -895,42 +898,51 @@
     });
 	</script>
 <script>
-	// let circularProgressHTML = document.querySelector(".skills .contantootiner:nth-child(1) .circular-progress"),
-    // progressValueHTML = document.querySelector(".skills .contantootiner:nth-child(1) .progress-value");
-
-	// let circularProgressPython = document.querySelector(".skills .contantootiner:nth-child(2) .circular-progress"),
-	// 	progressValuePython = document.querySelector(".skills .contantootiner:nth-child(2) .progress-value");
-
-	// let progressStartValueHTML = 0,
-	// 	progressEndValueHTML = 90,
-	// 	speedHTML = 50;
-
-	// let progressStartValuePython = 0,
-	// 	progressEndValuePython = 80,
-	// 	speedPython = 50;
-
-	// let progressHTML = setInterval(() => {
-	// 	progressStartValueHTML++;
-
-	// 	progressValueHTML.textContent = `${progressStartValueHTML}%`;
-	// 	circularProgressHTML.style.background = `conic-gradient(#a5a5a5 ${progressStartValueHTML * 3.6}deg, #d3d3d3 0deg)`;
-
-	// 	if (progressStartValueHTML === progressEndValueHTML) {
-	// 		clearInterval(progressHTML);
-	// 	}
-	// }, speedHTML);
-
-	// let progressPython = setInterval(() => {
-	// 	progressStartValuePython++;
-
-	// 	progressValuePython.textContent = `${progressStartValuePython}%`;
-	// 	circularProgressPython.style.background = `conic-gradient(#a5a5a5 ${progressStartValuePython * 3.6}deg, #d3d3d3 0deg)`; // Adjusted value for Python
-
-	// 	if (progressStartValuePython === progressEndValuePython) {
-	// 		clearInterval(progressPython);
-	// 	}
-	// }, speedPython);
-
+// 	var swiper = new Swiper('.swiper-container', {
+//   effect: 'coverflow',
+//   grabCursor: true,
+//   centeredSlides: true,
+//   slidesPerView: 'auto',
+//   loop: true,
+//   coverflowEffect: {
+//     rotate: 50,
+//     stretch: 0,
+//     depth: 100,
+//     modifier: 1,
+//     slideShadows: false,
+//   },
+//   breakpoints: {
+//     320: {
+//       slidesPerView: 1,
+//       spaceBetween: 10
+//     },
+//     640: {
+//       slidesPerView: 1.2,
+//       spaceBetween: 15
+//     },
+//     1024: {
+//       slidesPerView: 'auto',
+//     }
+//   }
+// });
+var swiper = new Swiper('.swiper-container', {
+    effect: 'coverflow',
+    grabCursor: true,
+    centeredSlides: true,
+    slidesPerView: 'auto',
+    loop: true,
+    coverflowEffect: {
+      rotate: 50,
+      stretch: 0,
+      depth: 100,
+      modifier: 1,
+      slideShadows: false,
+    },
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+  });
 </script>
   
 </div>
