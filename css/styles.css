@@ -1,3 +1,14 @@
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* 🚫 Prevent horizontal scroll */
+  width: 100%;
+}
+
 html {
   font-size: 100%;
 }
@@ -13,7 +24,8 @@ body {
 /**************************************/
 
 /**************************************/
-#back-to-top-btn{
+/* #back-to-top-btn{
+  display: none;
   position:fixed;
   bottom:20px;
   right:20px;
@@ -29,17 +41,67 @@ body {
   transition-duration: 0.2s;
   transition-timing-function: ease-in-out;
   transition-property: background-color, color;
+} */
+ #back-to-top-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 55px;
+  height: 55px;
+  background-color: #ffffffcc;
+  border: 2px solid #333;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease, transform 0.3s ease;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
+
+#back-to-top-btn img {
+  width: 60%;
+  height: auto;
+  pointer-events: none;
+}
+
+#back-to-top-btn.show {
+  opacity: 1;
+  pointer-events: auto;
+  transform: scale(1.1);
+}
+
+#back-to-top-btn:hover {
+  transform: scale(1.2);
+  background-color: #f0f0f0;
+}
+
+@media (max-width: 600px) {
+  #back-to-top-btn {
+    width: 45px;
+    height: 45px;
+    bottom: 15px;
+    right: 15px;
+  }
+
+  #back-to-top-btn img {
+    width: 50%;
+  }
+}
+
 .tictac{
   display: flex;
   align-items: center;
   justify-content: center;
 }
-#back-to-top-btn :hover, #back-to-top-btn:focus{
+/* #back-to-top-btn:hover, #back-to-top-btn:focus{
   background-color: #f6f6f6;
   opacity: .5;
   color:#fff;
-}
+} */
 .reveal{
   position: relative;
   transform: (150px);
@@ -1542,7 +1604,7 @@ footer.entry-meta .meta-in {
 /* ✅ Responsive override: 621px and below */
 @media screen and (max-width: 621px) {
   .ghuma {
-    width: 100vw;
+    width: 100%;
     height: auto;
     aspect-ratio: 47 / 48;
     padding: 5vw;
@@ -1735,12 +1797,12 @@ footer.entry-meta .meta-in {
   transition: .06s;
   animation: cursonAnim2 .0s infinite alternate;
 }
-#back-to-top-btn :hover ~ .cursor, #back-to-top-btn:focus ~.cursor{
+#back-to-top-btn:hover ~ .cursor, #back-to-top-btn:focus ~.cursor{
   transform: translate(-50%, -50%) scale(1.5);
   background-color: #fff;
   opacity: .5;
 }
-#back-to-top-btn :hover ~ .cursor, #back-to-top-btn:focus ~.cursor2{
+#back-to-top-btn:hover ~ .cursor, #back-to-top-btn:focus ~.cursor2{
   opacity: 0;
 }
 @keyframes cursorAnim{

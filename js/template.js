@@ -20,16 +20,34 @@ function handleDeviceType() {
 
   // Call the handleDeviceType function on page load
 handleDeviceType();
+
+// const backToTopButton = document.querySelector("#back-to-top-btn");
+
+//     window.addEventListener("scroll", function () {
+//       if (window.pageYOffset > 300) {
+//         backToTopButton.style.display = 'block';
+//       } else {
+//         backToTopButton.style.display = 'none';
+//       }
+//     });
+
+//     backToTopButton.addEventListener("click", function () {
+//       window.scrollTo({ top: 0, behavior: "smooth" });
+//     });
 const backToTopButton = document.querySelector("#back-to-top-btn");
-window.addEventListener("scroll", scrollFunction);
-function scrollFunction(){
-	if (window.pageYOffset>300){
-		backToTopButton.style.display ='block';
-	}
-	else {
-		backToTopButton.style.display='none';
-	}
-}
+
+window.addEventListener("scroll", function () {
+  if (window.pageYOffset > 300) {
+    backToTopButton.classList.add("show");
+  } else {
+    backToTopButton.classList.remove("show");
+  }
+});
+
+backToTopButton.addEventListener("click", function () {
+  window.scrollTo({ top: 0, behavior: "smooth" });
+});
+
 // Helper function to check if an element is in the viewport
 function isElementInViewport(element) {
     var rect = element.getBoundingClientRect();

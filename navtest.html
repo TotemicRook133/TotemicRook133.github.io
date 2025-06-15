@@ -6,34 +6,65 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- Bootstrap 3 CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <style>
+    
+.parent {
+    display: grid;
+    grid-template-columns: repeat(9, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    gap: 1px;
+}
+    
+.div1 {
+    grid-column: span 3 / span 3;
+    grid-row: span 2 / span 2;
+}
+
+.div2 {
+    grid-column: span 3 / span 3;
+    grid-row: span 5 / span 5;
+    grid-column-start: 4;
+}
+
+.div3 {
+    grid-column: span 3 / span 3;
+    grid-row: span 3 / span 3;
+    grid-column-start: 7;
+}
+
+.div4 {
+    grid-column: span 2 / span 2;
+    grid-row: span 2 / span 2;
+    grid-column-start: 2;
+    grid-row-start: 3;
+}
+
+.div5 {
+    grid-row: span 2 / span 2;
+    grid-row-start: 4;
+}
+
+.div6 {
+    grid-column: span 2 / span 2;
+    grid-row: span 2 / span 2;
+    grid-column-start: 8;
+    grid-row-start: 4;
+}
+        
+  </style>
 </head>
 <body>
 
-<nav class="navbar navbar-default">
-  <div class="container-fluid">
+
+<div class="parent">
+    <div class="div1"><img src ="images/bnks.jpg"></div>
+    <div class="div2"><img src ="images/bnks.jpg"></div>
+    <div class="div3"><img src ="images/bnks.jpg"></div>
+    <div class="div4"><img src ="images/bnks.jpg"></div>
+    <div class="div5"><img src ="images/bnks.jpg"></div>
+    <div class="div6"><img src ="images/bnks.jpg"></div>
+</div>
     
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-1">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="#">MySite</a>
-    </div>
-
-    <div class="collapse navbar-collapse" id="navbar-collapse-1">
-      <ul class="nav navbar-nav">
-        <li class="active"><a href="#">Home</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Portfolio</a></li>
-        <li><a href="#">Blog</a></li>
-      </ul>
-    </div>
-
-  </div>
-</nav>
-
 <!-- jQuery (MUST load before Bootstrap JS) -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 
