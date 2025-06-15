@@ -37,7 +37,14 @@
 
 		<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"/> -->
 		<!--[if lt IE 9]> <script src="js/html5shiv.js"></script> <![endif]-->
-		
+		<!-- Improved Navbar based on inspiration, still responsive and stylish -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+
 	</head>
 	<body class="home">
 		<div class="message" id="calibrationMessage">
@@ -60,7 +67,7 @@
 				</h1>
 			</div>
 
-	<nav class="navbar navbar-default navbar-sticky">
+	<!--<nav class="navbar navbar-default navbar-sticky">
 				<div class="container-fluid">
 					
 					<div class="navbar-header">
@@ -81,14 +88,62 @@
 									<li><a href="sidebar-right.html">Right Sidebar</a></li>
 									<li><a href="single.html">Blog Post</a></li>
 								</ul>
-							</li> -->
+							</li> 
 							<li><a href="blog.html">Blog</a></li>
 							<li><a href="card.html" target="_blank">Card(synopsis)</a></li>
 						</ul>
 					
 					</div>			
 				</div>	
-			</nav>
+			</nav>-->
+
+<nav class="navbar-upgrade">
+  <div class="nav-container">
+    <div class="nav-logo">Adit</div>
+    <div class="nav-toggle" onclick="document.querySelector('.nav-menu').classList.toggle('active')">
+      <ion-icon name="menu-outline"></ion-icon>
+    </div>
+    <ul class="nav-menu">
+      <li class="nav-item active" style="--i:#a955ff;--j:#ea51ff">
+		<a class="nav-link" href="index.html">
+		<span class="nav-icon"><ion-icon name="home-outline"></ion-icon></span>
+		<span class="nav-title">Home</span>
+		</a>
+	</li>
+      <li class="nav-item" style="--i:#56CCF2;--j:#2F80ED">
+        <a class="nav-link" href="about.html">
+          <span class="nav-icon"><ion-icon name="person-outline"></ion-icon></span>
+          <span class="nav-title">About</span>
+        </a>
+      </li>
+      <li class="nav-itemi" style="--i:#FF9966;--j:#FF5E62">
+        <a class="nav-link" href="achievement.html">
+          <span class="nav-icon"><ion-icon name="trophy-outline"></ion-icon></span>
+          <span class="nav-title">Achievements</span>
+        </a>
+      </li>
+      <li class="nav-item" style="--i:#80FF72;--j:#7EE8FA">
+        <a class="nav-link" href="portfolio.html">
+          <span class="nav-icon"><ion-icon name="albums-outline"></ion-icon></span>
+          <span class="nav-title">Portfolio</span>
+        </a>
+      </li>
+      <li class="nav-item" style="--i:#ffa9c6;--j:#f434e2">
+        <a class="nav-link" href="blog.html">
+          <span class="nav-icon"><ion-icon name="create-outline"></ion-icon></span>
+          <span class="nav-title">Blog</span>
+        </a>
+      </li>
+      <li class="nav-item" style="--i:#FFD452;--j:#F6AE2D">
+        <a class="nav-link" href="card.html" target="_blank">
+          <span class="nav-icon"><ion-icon name="card-outline"></ion-icon></span>
+          <span class="nav-title">Card</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
 
 
 
@@ -122,9 +177,9 @@
 							</font></p>
 							<a href="about.html"><div class="vitra"></a>
 								<a href="about.html"><h6 align="center">More about me</h6></a>
-							</div>
 						</div>
 					</div>
+				</div>
 					
 					</div>
 					
