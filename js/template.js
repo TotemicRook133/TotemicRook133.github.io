@@ -21,19 +21,6 @@ function handleDeviceType() {
   // Call the handleDeviceType function on page load
 handleDeviceType();
 
-// const backToTopButton = document.querySelector("#back-to-top-btn");
-
-//     window.addEventListener("scroll", function () {
-//       if (window.pageYOffset > 300) {
-//         backToTopButton.style.display = 'block';
-//       } else {
-//         backToTopButton.style.display = 'none';
-//       }
-//     });
-
-//     backToTopButton.addEventListener("click", function () {
-//       window.scrollTo({ top: 0, behavior: "smooth" });
-//     });
 const backToTopButton = document.querySelector("#back-to-top-btn");
 
 window.addEventListener("scroll", function () {
