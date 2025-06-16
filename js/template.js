@@ -58,244 +58,34 @@ function isElementInViewport(element) {
         rect.right <= (window.innerWidth || document.documentElement.clientWidth)
     );
 }
-// tech skillsko
 
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const progress = entry.target;
+      const valueContainer = progress.querySelector(".progress-value");
+      const endValue = parseInt(progress.getAttribute("data-skill"));
+      const color = progress.getAttribute("data-color") || "#00adb5";
+      let startValue = 0;
+      const speed = 20;
 
-let circularProgressAUTO = document.querySelector(".skills .contantootiner:nth-child(1) .circular-progress"),
-    progressValueAUTO = document.querySelector(".skills .contantootiner:nth-child(1) .progress-value");
+      const interval = setInterval(() => {
+        startValue++;
+        valueContainer.textContent = `${startValue}%`;
+        progress.style.background = `conic-gradient(${color} ${startValue * 3.6}deg, #e0e0e0 0deg)`;
+        if (startValue >= endValue) clearInterval(interval);
+      }, speed);
 
-let circularProgressPython = document.querySelector(".skills .contantootiner:nth-child(2) .circular-progress"),
-    progressValuePython = document.querySelector(".skills .contantootiner:nth-child(2) .progress-value");
-
-let circularProgressPhotoshop = document.querySelector(".skills .contantootiner:nth-child(3) .circular-progress"),
-    progressValuePhotoshop = document.querySelector(".skills .contantootiner:nth-child(3) .progress-value");
-
-let circularProgressCircuit = document.querySelector(".skills .contantootiner:nth-child(4) .circular-progress"),
-    progressValueCircuit = document.querySelector(".skills .contantootiner:nth-child(4) .progress-value");
-
-let circularProgressWeb = document.querySelector(".skills .contantootiner:nth-child(5) .circular-progress"),
-    progressValueWeb = document.querySelector(".skills .contantootiner:nth-child(5) .progress-value");
-
-let circularProgressMath = document.querySelector(".skills .contantootiner:nth-child(6) .circular-progress"),
-    progressValueMath = document.querySelector(".skills .contantootiner:nth-child(6) .progress-value");
-
-let circularProgressEE = document.querySelector(".skills .contantootiner:nth-child(7) .circular-progress"),
-    progressValueEE = document.querySelector(".skills .contantootiner:nth-child(7) .progress-value");
-
-let circularProgressLeadership = document.querySelector(".skills .contantootiner:nth-child(8) .circular-progress"),
-    progressValueLeadership = document.querySelector(".skills .contantootiner:nth-child(8) .progress-value");
-
-let circularProgressMHC = document.querySelector(".skills .contantootiner:nth-child(9) .circular-progress"),
-    progressValueMHC = document.querySelector(".skills .contantootiner:nth-child(9) .progress-value");
-
-let circularProgressFL = document.querySelector(".skills .contantootiner:nth-child(10) .circular-progress"),
-    progressValueFL = document.querySelector(".skills .contantootiner:nth-child(10) .progress-value");
-
-let circularProgressMUN = document.querySelector(".skills .contantootiner:nth-child(11) .circular-progress"),
-    progressValueMUN = document.querySelector(".skills .contantootiner:nth-child(11) .progress-value");
-
-let circularProgressTL = document.querySelector(".skills .contantootiner:nth-child(12) .circular-progress"),
-    progressValueTL = document.querySelector(".skills .contantootiner:nth-child(12) .progress-value");
-
-let circularProgressPM = document.querySelector(".skills .contantootiner:nth-child(13) .circular-progress"),
-    progressValuePM = document.querySelector(".skills .contantootiner:nth-child(13) .progress-value");
-
-let progressStartValueAUTO = 0,
-    progressEndValueAUTO = 90,
-    speedHTML = 50;
-
-let progressStartValuePython = 0,
-    progressEndValuePython = 80,
-    speedPython = 50;
-
-let progressStartValuePhotoshop = 0,
-    progressEndValuePhotoshop = 70;
-
-let progressStartValueCircuit = 0,
-    progressEndValueCircuit = 75;
-
-let progressStartValueWeb = 0,
-    progressEndValueWeb = 85;
-
-let progressStartValueMath = 0,
-    progressEndValueMath = 95;
-
-let progressStartValueEE = 0,
-    progressEndValueEE = 75;
-
-let progressAUTO = setInterval(() => {
-    progressStartValueAUTO++;
-    
-    progressValueAUTO.textContent = `${progressStartValueAUTO}%`;
-    circularProgressAUTO.style.background = `conic-gradient(#a5a5a5 ${progressStartValueAUTO * 3.6}deg, #d3d3d3 0deg)`;
-    
-    if (progressStartValueAUTO === progressEndValueAUTO) {
-        clearInterval(progressAUTO);
+      observer.unobserve(progress); // run once
     }
-}, speedHTML);
+  });
+}, {
+  threshold: 0.4
+});
 
-let progressWeb = setInterval(() => {
-    progressStartValueWeb++;
+document.querySelectorAll(".circular-progress").forEach(el => observer.observe(el));
 
-    progressValueWeb.textContent = `${progressStartValueWeb}%`;
-    circularProgressWeb.style.background = `conic-gradient(#a5a5a5 ${progressStartValueWeb * 3.6}deg, #d3d3d3 0deg)`;
-
-    if (progressStartValueWeb === progressEndValueWeb) {
-        clearInterval(progressWeb);
-    }
-}, speedHTML);
-let progressMath = setInterval(() => {
-    progressStartValueMath++;
-
-    progressValueMath.textContent = `${progressStartValueMath}%`;
-    circularProgressMath.style.background = `conic-gradient(#a5a5a5 ${progressStartValueMath * 3.6}deg, #d3d3d3 0deg)`;
-
-    if (progressStartValueMath === progressEndValueMath) {
-        clearInterval(progressMath);
-    }
-}, speedHTML);
-let progressEE = setInterval(() => {
-    progressStartValueEE++;
-
-    progressValueEE.textContent = `${progressStartValueEE}%`;
-    circularProgressEE.style.background = `conic-gradient(#a5a5a5 ${progressStartValueEE * 3.6}deg, #d3d3d3 0deg)`;
-
-    if (progressStartValueEE === progressEndValueEE) {
-        clearInterval(progressEE);
-    }
-}, speedHTML);
-
-let progressCircuit = setInterval(() => {
-    progressStartValueCircuit++;
-
-    progressValueCircuit.textContent = `${progressStartValueCircuit}%`;
-    circularProgressCircuit.style.background = `conic-gradient(#a5a5a5 ${progressStartValueCircuit * 3.6}deg, #d3d3d3 0deg)`;
-
-    if (progressStartValueCircuit === progressEndValueCircuit) {
-        clearInterval(progressCircuit);
-    }
-}, speedHTML);
-let progressPhotoshop = setInterval(() => {
-    progressStartValuePhotoshop++;
-
-    progressValuePhotoshop.textContent = `${progressStartValuePhotoshop}%`;
-    circularProgressPhotoshop.style.background = `conic-gradient(#a5a5a5 ${progressStartValuePhotoshop * 3.6}deg, #d3d3d3 0deg)`;
-
-    if (progressStartValuePhotoshop === progressEndValuePhotoshop) {
-        clearInterval(progressPhotoshop);
-    }
-}, speedHTML);
-
-let progressPython = setInterval(() => {
-    progressStartValuePython++;
-
-    progressValuePython.textContent = `${progressStartValuePython}%`;
-    circularProgressPython.style.background = `conic-gradient(#a5a5a5 ${progressStartValuePython * 3.6}deg, #d3d3d3 0deg)`; // Adjusted value for Python
-
-    if (progressStartValuePython === progressEndValuePython) {
-        clearInterval(progressPython);
-    }
-}, speedPython);
-
-// skillsko
-//interskill
-// let circularProgressLeadership = document.querySelector(".skills1 .contantootiner1:nth-child(1) .circular-progress1"),
-//     progressValueLeadership = document.querySelector(".skills1 .contantootiner1:nth-child(1) .progress-value1");
-
-let progressStartValueLeadership = 0,
-    progressEndValueLeadership = 90;
-
-let progressLeadership = setInterval(() => {
-    progressStartValueLeadership++;
-    
-    progressValueLeadership.textContent = `${progressStartValueLeadership}%`;
-    circularProgressLeadership.style.background = `conic-gradient(#a5a5a5 ${progressStartValueLeadership * 3.6}deg, #d3d3d3 0deg)`;
-    
-    if (progressStartValueLeadership === progressEndValueLeadership) {
-         clearInterval(progressLeadership);
-    }
-}, speedHTML);
-// let circularProgressMHC = document.querySelector(".skills1 .contantootiner1:nth-child(2) .circular-progress1"),
-//     progressValueMHC = document.querySelector(".skills1 .contantootiner1:nth-child(2) .progress-value1");
-
-let progressStartValueMHC = 0,
-    progressEndValueMHC = 95;
-
-let progressMHC = setInterval(() => {
-    progressStartValueMHC++;
-    
-    progressValueMHC.textContent = `${progressStartValueMHC}%`;
-    circularProgressMHC.style.background = `conic-gradient(#a5a5a5 ${progressStartValueMHC * 3.6}deg, #d3d3d3 0deg)`;
-    
-    if (progressStartValueMHC === progressEndValueMHC) {
-         clearInterval(progressMHC);
-    }
-}, speedHTML);
-// let circularProgressFL = document.querySelector(".skills1 .contantootiner1:nth-child(3) .circular-progress1"),
-//     progressValueFL = document.querySelector(".skills1 .contantootiner1:nth-child(3) .progress-value1");
-
-let progressStartValueFL = 0,
-    progressEndValueFL = 70;
-
-let progressFL = setInterval(() => {
-    progressStartValueFL++;
-    
-    progressValueFL.textContent = `${progressStartValueFL}%`;
-    circularProgressFL.style.background = `conic-gradient(#a5a5a5 ${progressStartValueFL * 3.6}deg, #d3d3d3 0deg)`;
-    
-    if (progressStartValueFL === progressEndValueFL) {
-         clearInterval(progressFL);
-    }
-}, speedHTML);
-// let circularProgressMUN = document.querySelector(".skills1 .contantootiner1:nth-child(4) .circular-progress1"),
-//     progressValueMUN = document.querySelector(".skills1 .contantootiner1:nth-child(4) .progress-value1");
-
-let progressStartValueMUN = 0,
-    progressEndValueMUN = 85;
-
-let progressMUN = setInterval(() => {
-    progressStartValueMUN++;
-    
-    progressValueMUN.textContent = `${progressStartValueMUN}%`;
-    circularProgressMUN.style.background = `conic-gradient(#a5a5a5 ${progressStartValueMUN * 3.6}deg, #d3d3d3 0deg)`;
-    
-    if (progressStartValueMUN === progressEndValueMUN) {
-         clearInterval(progressMUN);
-    }
-}, speedHTML);
-// let circularProgressTL = document.querySelector(".skills1 .contantootiner1:nth-child(5) .circular-progress1"),
-//     progressValueTL = document.querySelector(".skills1 .contantootiner1:nth-child(5) .progress-value1");
-
-let progressStartValueTL = 0,
-    progressEndValueTL = 90;
-
-let progressTL = setInterval(() => {
-    progressStartValueTL++;
-    
-    progressValueTL.textContent = `${progressStartValueTL}%`;
-    circularProgressTL.style.background = `conic-gradient(#a5a5a5 ${progressStartValueTL * 3.6}deg, #d3d3d3 0deg)`;
-    
-    if (progressStartValueTL === progressEndValueTL) {
-         clearInterval(progressTL);
-    }
-}, speedHTML);
-// let circularProgressPM = document.querySelector(".skills1 .contantootiner1:nth-child(6) .circular-progress1"),
-//     progressValuePM = document.querySelector(".skills1 .contantootiner1:nth-child(6) .progress-value1");
-
-let progressStartValuePM = 0,
-    progressEndValuePM = 70;
-
-let progressPM = setInterval(() => {
-    progressStartValuePM++;
-    
-    progressValuePM.textContent = `${progressStartValuePM}%`;
-    circularProgressPM.style.background = `conic-gradient(#a5a5a5 ${progressStartValuePM * 3.6}deg, #d3d3d3 0deg)`;
-    
-    if (progressStartValuePM === progressEndValuePM) {
-         clearInterval(progressPM);
-    }
-}, speedHTML);
-//interskill
+//kk
 //porjec
 const allImages = document.querySelectorAll(".images .img");
 const lightbox = document.querySelector(".lightbox");
