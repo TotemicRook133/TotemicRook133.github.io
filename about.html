@@ -23,6 +23,232 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
 <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+<style>
+	
+.legend-intro {
+  max-width: 820px;
+  margin: 80px auto 100px;
+  padding: 50px;
+  background: linear-gradient(145deg, rgba(20, 20, 30, 0.92), rgba(40, 60, 80, 0.82));
+  border: 2px solid rgba(47, 128, 237, 0.3); /* Base border */
+  /* box-shadow:
+    0 0 12px #2F80ED,
+    0 0 24px rgba(47, 128, 237, 0.4),
+    inset 0 0 10px rgba(47, 128, 237, 0.2); */
+  border-radius: 20px;
+  color: #e0e0e0;
+  font-family: 'Orbitron', sans-serif;
+  line-height: 1.8;
+  backdrop-filter: blur(16px);
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+
+  /* 💠 3D Card Effect */
+  box-shadow:
+    0 4px 8px rgba(0, 0, 0, 0.3),         /* base shadow */
+    0 8px 90px #2F80ED;,       /* deeper base */
+    inset 0 1px 0 rgba(255, 255, 255, 0.05), /* top edge light */
+    inset 0 -3px 5px rgba(0, 0, 0, 0.3);  /* bottom edge shadow */
+
+  transform-style: preserve-3d;
+  perspective: 1000px;
+  animation: fadeInIntro 1.5s ease, holoGlow 6s infinite alternate;
+}
+.legend-intro:hover {
+  transform: translateY(-6px) rotateX(2deg);
+  box-shadow:
+    0 12px 24px rgba(0, 0, 0, 0.45),
+    0 4px 6px rgba(86, 204, 242, 0.15),
+    inset 0 -3px 5px rgba(0, 0, 0, 0.2),
+    inset 0 2px 3px rgba(255, 255, 255, 0.06);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.legend-intro::before {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  right: 2px;
+  bottom: 2px;
+  border-radius: 18px;
+  background: linear-gradient(145deg, rgba(86,204,242,0.05), rgba(255,255,255,0.02));
+  box-shadow: inset 0 0 15px rgba(86,204,242,0.15);
+  z-index: 0;
+}
+
+.intro-text {
+  text-align: center;
+  /* font-family: "Lucida Calligraphy", cursive; */
+  /* padding: 20px; */
+  font-size: 19px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  /* margin-bottom: 25px; */
+  /* color: #c0faff; */
+  /* text-shadow: 0 0 6px #56ccf2; */
+
+  position: relative;
+}
+.legend-intro h2 {
+  font-size: 34px;
+  color: #56CCF2;
+  text-align: center;
+  margin-bottom: 30px;
+  text-shadow: 0 0 14px #2F80ED, 0 0 6px #56ccf2;
+  letter-spacing: 1px;
+  animation: flickerGlow 3s infinite;
+  position: relative;
+  z-index: 2;
+}
+
+.legend-intro p {
+  font-size: 17.5px;
+  text-align: justify;
+  padding: 0 5px;
+  z-index: 2;
+  position: relative;
+}
+
+.intro-paragraphs p {
+  margin-top: 22px;
+}
+
+/* Animated Typewriter Effect */
+.typewriter p {
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 2px solid #56CCF2;
+  font-size: 19px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  margin-bottom: 25px;
+  color: #c0faff;
+  text-shadow: 0 0 6px #56ccf2;
+
+  position: relative;
+  z-index: 2;
+  width: fit-content;
+  animation: blink 0.75s step-end infinite;
+}
+
+/* Only handles the blinking cursor */
+@keyframes blink {
+  50% { border-color: transparent }
+}
+
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+@keyframes blink {
+  50% { border-color: transparent }
+}
+
+/* Glowing Icons that float */
+.floating-icons {
+  position: absolute;
+  top: -20px;
+  left: -20px;
+  right: -20px;
+  display: flex;
+  justify-content: space-around;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.08;
+}
+.floating-icons i {
+  font-size: 60px;
+  animation: floatIcon 6s infinite ease-in-out alternate;
+  color: #56ccf2;
+  text-shadow:
+    0 0 15px #56ccf2,
+    0 0 30px rgba(86, 204, 242, 0.2);
+}
+.floating-icons i:nth-child(2) { animation-delay: 1s; }
+.floating-icons i:nth-child(3) { animation-delay: 2s; }
+.floating-icons i:nth-child(4) { animation-delay: 3s; }
+.floating-icons i:nth-child(5) { animation-delay: 4s; }
+
+/* Particle Glow Background */
+.intro-bg-effect {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: radial-gradient(circle, rgba(86,204,242,0.1) 0%, transparent 70%);
+  animation: pulseBackground 5s infinite alternate;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Keyframes */
+@keyframes fadeInIntro {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes holoGlow {
+  0% { box-shadow: 0 0 30px rgba(86,204,242,0.25), inset 0 0 10px rgba(255,255,255,0.05); }
+  100% { box-shadow: 0 0 40px rgba(86,204,242,0.35), inset 0 0 14px rgba(255,255,255,0.07); }
+}
+
+@keyframes flickerGlow {
+  0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+    text-shadow: 0 0 12px #56ccf2, 0 0 20px rgba(86,204,242,0.3);
+  }
+  20%, 24%, 55% {
+    text-shadow: 0 0 4px #56ccf2;
+  }
+}
+
+@keyframes floatIcon {
+  from { transform: translateY(0); }
+  to { transform: translateY(20px); }
+}
+
+@keyframes pulseBackground {
+  0% { opacity: 0.05; transform: scale(1); }
+  100% { opacity: 0.12; transform: scale(1.05); }
+}
+
+@keyframes typing {
+  from { width: 0; }
+  to { width: 100%; }
+}
+@keyframes blink {
+  from, to { border-color: transparent; }
+  50% { border-color: #56CCF2; }
+}
+@media (max-width: 768px) {
+  .legend-intro {
+    margin: 40px 20px 60px;
+    padding: 30px 20px;
+    border-radius: 16px;
+  }
+
+  .legend-intro h2 {
+    font-size: 26px;
+    margin-bottom: 20px;
+  }
+
+  .legend-intro p,
+  .typewriter p {
+    font-size: 16px;
+    line-height: 1.6;
+    text-align: left;
+  }
+
+  .typewriter p {
+    font-size: 17px;
+  }
+
+  .floating-icons i {
+    font-size: 40px;
+  }
+}
+
+</style>
 
 	<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"/> -->
 	<!--[if lt IE 9]> <script src="js/html5shiv.js"></script> <![endif]-->
@@ -89,60 +315,142 @@
 </nav>
 	</header>
 	<main id="main">
-		
 		<div class="container">
+			<div class="containero">
+			
+				   
+			
+					<div class="cardo">
+			
+						<div class="slideo slide1o">
+			
+							<div class="contento">
+			
+								<div class="icon">
+			
+									<img src ="images/guy.png">
+			
+								</div>
+			
+							</div>
+			
+						</div>
+			
+						<div class="slideo slide2o">
+			
+							<div class="contento">
+			
+								<h3>
+			
+									Hello there!
+			
+								</h3>
+			
+								<p>Trust yourself and keep going.</p>
+			
+							</div>
+			
+						</div>
+			
+					</div>
+			
+					
+			
+				</div>		
 			
 			<div class="row section topspace">
 				
-				<div class="card">
-					<div class="inner-card">
-					<div class="contan">
-						<hr>
-						<i class="fas fa-user"></i>
-						<span class="tauko" data-val="400">Name</span>
-						<span class="text">Adit Prasad Lohani</span>
-						<hr>
-					</div>
-					<div class="contan">
-						<i class="fas fa-birthday-cake"></i>
-						<span class="tauko" data-val="200">Age</span>
-						<font color="white"><span id="age"></span></font>
-						<hr>
-					</div>
-					<div class="contan">
-						<i class="fas fa-id-card"></i>
-						<span class="tauko" data-val="10">   Roll no:</span>
-						<span class="text"> 4133e (BNKS😉)</span>
-						<hr>
-					</div>
-					<div class="contan">
-						<i class="fas fa-futbol"></i>
-						<span class="tauko" data-val="10">Favourite Club</span>
-						<span class="text">Chelsea(pl), Real Madrid, RCB(ipl)</span>
-						<hr>
-					</div>
-					<div class="contan">
-						<i class="fas fa-code"></i>
-						<span class="tauko" data-val="10">Favourite Language</span>
-						<span class="text">Python</span>
-						<hr>
-					</div>
-					<div class="contan">
-						<i class="fas fa-bullseye"></i>
-						<span class="tauko" data-val="10">Aim</span>
-						<span class="text">Electrical Engineer</span>
-						<hr>
-					</div>
-					<div class="contan">
-						<i class="fas fa-heart"></i>
-						<span class="tauko" data-val="10">Hobby</span>
-						<span class="text">Watching movies, listening to musics, living life.</span>
-						<hr>
-					</div>
-					</div>
-				</div>
-	
-				
+
+<div class="card">
+  <div class="inner-card">
+
+    <div class="contan">
+      <hr>
+      <i class="fas fa-user"></i>
+      <span class="tauko" data-val="400">Name</span>
+      <span class="text">Adit Prasad Lohani</span>
+      <hr>
+    </div>
+
+    <div class="contan">
+      <i class="fas fa-birthday-cake"></i>
+      <span class="tauko" data-val="200">Age</span>
+      <font color="white"><span id="age"></span></font>
+      <hr>
+    </div>
+
+    <div class="contan">
+      <i class="fas fa-id-card"></i>
+      <span class="tauko">Roll no:</span>
+      <span class="text">4133e (BNKS😉)</span>
+      <hr>
+    </div>
+
+    <div class="contan">
+      <i class="fas fa-futbol"></i>
+      <span class="tauko">Favourite Club</span>
+      <span class="text">Chelsea (PL), Real Madrid, RCB (IPL), Melbourne Stars (BBL)</span>
+      <hr>
+    </div>
+
+    <div class="contan">
+      <i class="fas fa-code"></i>
+      <span class="tauko">Favourite Language</span>
+      <span class="text">Python</span>
+      <hr>
+    </div>
+
+
+  
+
+    <div class="contan">
+      <i class="fas fa-star"></i>
+      <span class="tauko">Known For</span>
+      <span class="text">Winning 20+ STEM awards, building solar projects 🌞</span>
+      <hr>
+    </div>
+
+    <div class="contan">
+      <i class="fas fa-laptop-code"></i>
+      <span class="tauko">Tech Stack</span>
+      <span class="text">C, Python, Arduino, ESP32, HTML/CSS/JS</span>
+      <hr>
+    </div>
+
+   
+
+  </div>
+</div>
+<div class="legend-intro">
+  <div class="intro-bg-effect"></div>
+  <div class="floating-icons">
+    <i class="fas fa-microchip"></i>
+    <i class="fas fa-solar-panel"></i>
+    <i class="fas fa-code"></i>
+    <i class="fas fa-brain"></i>
+    <i class="fas fa-globe"></i>
+  </div>
+
+  <h2>Who am I beyond the card?</h2>
+  <div class="typewriter">
+  <p id="typewriter-text"></p>
+</div>
+
+  <div class="intro-paragraphs">
+    <p>
+      I don’t just build circuits; I build bridges — between knowledge and impact, between what is and what could be.
+      Whether it’s programming microcontrollers, crafting hybrid energy systems, or leading initiatives back home in Nepal,
+      I bring curiosity, creativity, and compassion to everything I do.
+    </p>
+    <p>
+      Right now, I’m deep into my Electrical & Electronic Engineering degree at UTS — exploring sustainable tech, intelligent systems,
+      and ways to engineer a future that’s not just smart, but meaningful. This isn’t just a journey. It’s a mission. And I’m just getting started.
+    </p>
+  </div>
+</div>
+
+
+
 			</div> <!-- / section -->
 			
 						<div class="row section featured topspace">
@@ -567,6 +875,39 @@
 			},500)
 		})
 	</script>
+<script>
+const roles = [
+	"Adit Lohani",
+  "an Electrical Engineering student",
+  "a passionate researcher",
+  "a U:PASS Leader",
+  "a dreamer with tools",
+  "an engineer in the making"
+];
+
+let currentIndex = 0;
+const textElement = document.getElementById("typewriter-text");
+
+function typeWriter(text, i = 0) {
+  if (i < text.length) {
+    textElement.textContent = text.slice(0, i + 1);
+    setTimeout(() => typeWriter(text, i + 1), 50);
+  } else {
+    setTimeout(() => cycleText(), 2000); // wait 2s before next
+  }
+}
+
+function cycleText() {
+  currentIndex = (currentIndex + 1) % roles.length;
+  textElement.textContent = "";
+  typeWriter("I am " + roles[currentIndex]);
+}
+
+// Start the first one
+typeWriter("I am " + roles[currentIndex]);
+</script>
+
+
 	<script type="text/JavaScript">
 		window.addEventListener('scroll', function(){
 			var scroll = document.querySelector('.scrollTop');
